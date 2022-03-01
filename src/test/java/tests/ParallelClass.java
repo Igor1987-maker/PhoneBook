@@ -2,6 +2,7 @@ package tests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
@@ -21,9 +22,11 @@ public class ParallelClass {
 
     }
 
-    @Test(threadPoolSize = 3, invocationCount = 10,  invocationTimeOut = 10000)
+    @Test//(threadPoolSize = 3, invocationCount = 10,  invocationTimeOut = 10000)
     public void test2(){
-        wd = new FirefoxDriver();
+     // wd = new FirefoxDriver();
+        //wd = new EdgeDriver();
+        wd = new EdgeDriver();
         wd.navigate().to("https://www.google.com/");
         wd.manage().window().maximize();
         wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
