@@ -53,6 +53,7 @@ public class UserHelper extends HelperBase {
         if (alert == null) {
             return false;
         } else {
+            wd.switchTo().alert();
             alert.accept();
             return true;
         }
